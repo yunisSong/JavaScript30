@@ -1,0 +1,7 @@
+#移除已经写好的 FINISHED 文件
+IFS=$'\n'
+for File in `find . -name '*FINISHED.html*'`
+do 
+   echo $File
+   rm $File
+done

@@ -1,0 +1,11 @@
+#拷贝初始文件为FINISHED文件
+IFS=$'\n'
+for File in `find . -name '*START.html*'`
+do 
+   echo $File
+   newfile=`echo $File | sed 's/START/FINISHED/g'`
+   #newfile=`echo $File | sed 's/FINISHED/START/g'`
+
+   cp $File $newfile
+
+done
