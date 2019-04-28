@@ -59,6 +59,40 @@
 
 <script>
 
+  // 播放声音 展示播放动画
+  function playAudio(e) {
+    //找到按下的按键对应的 audio
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    //找到按下的按键对应的 视图
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    //判断 audio 是否存在
+    if (!audio) return;
+    //设置播放起始时间为 0
+    audio.currentTime = 0;
+    // 播放音频
+    audio.play();
+    //视图增加布局
+    key.classList.add('playing');
+  }
+
+  // 播放结束后，移除视图动画
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  //找到全部的视图
+  const keys = Array.from(document.querySelectorAll('.key'));
+  //添加监听 transitionend 事件
+  /*
+  transitionend 事件会在 CSS transition 结束后触发. 当transition完成前移除transition时，比如移除css的transition-property
+  属性，事件将不会被触发.如在transition完成前设置 display 为"none"，事件同样不会被触发。
+  */
+  keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+
+  // 监听键盘按下事件
+  window.addEventListener('keydown',playAudio);
+
 </script>
 
 
