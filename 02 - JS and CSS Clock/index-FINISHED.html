@@ -1,74 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>JS + CSS Clock</title>
+    <meta charset="UTF-8"
+    <title>JS + CSS Clock</title>
 </head>
+
 <body>
-
-
     <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+        </div>
     </div>
-
-
-  <style>
+    <style>
     html {
-      background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
-      background-size: cover;
-      font-family: 'helvetica neue';
-      text-align: center;
-      font-size: 10px;
+        background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+        background-size: cover;
+        font-family: 'helvetica neue';
+        text-align: center;
+        font-size: 10px;
     }
 
     body {
-      margin: 0;
-      font-size: 2rem;
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-      align-items: center;
+        margin: 0;
+        font-size: 2rem;
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+        align-items: center;
     }
 
     .clock {
-      width: 30rem;
-      height: 30rem;
-      border: 20px solid white;
-      border-radius: 50%;
-      margin: 50px auto;
-      position: relative;
-      padding: 2rem;
-      box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #EFEFEF,
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
+        width: 30rem;
+        height: 30rem;
+        border: 20px solid white;
+        border-radius: 50%;
+        margin: 50px auto;
+        position: relative;
+        padding: 2rem;
+        box-shadow:
+            0 0 0 4px rgba(0, 0, 0, 0.1),
+            inset 0 0 0 3px #EFEFEF,
+            inset 0 0 10px black,
+            0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .clock-face {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px); /* account for the height of the clock hands */
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-3px);
+        /* account for the height of the clock hands */
     }
 
     .hand {
-      width: 50%;
-      height: 6px;
-      background: black;
-      position: absolute;
-      top: 50%;
+        width: 50%;
+        height: 6px;
+        background: black;
+        position: absolute;
+        top: 50%;
+        transform-origin: 100%;
+        transition: all 0.05s;
+        transform: rotate(90deg);
+        transition-timing-function: cubic-bezier(0, 1.42, 0.62, 1.48);
     }
+    </style>
+    <script>
+      //找到表盘中各个指针
+        const hourHand = document.querySelector(`.hour-hand`);
+        const minHand = document.querySelector(`.min-hand`);
+        const secondHand = document.querySelector(`.second-hand`);
+        function setDate(argument) {
+          //获取当前时间
+          const date = new Date();
+          // 获取秒
+          const second = date.getSeconds();
+          // 计算当前秒针的转向
+          const secondDegrees = (second / 60) * 360 + 90;
+          //设置秒针的变换角度
+          secondHand.style.transform = `rotate(${secondDegrees}deg)`;
 
-  </style>
+          const min = date.getMinutes();
+          const minDegrees = (min / 60) * 360 + 90;
+          console.log(minDegrees);
+          minHand.style.transform = `rotate(${minDegrees}deg)`;
 
-  <script>
+
+          const hour = date.getHours();
+          const hourDegrees = (hour / 60) * 360 + 90;
+          console.log(hourDegrees);
+          hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+        }
+
+        //定时器调用。每隔1000 毫秒调用一次
+        setInterval(setDate, 1000);
+        //先设置正确的初始位置
+        setDate();
 
 
-  </script>
+    </script>
 </body>
+
 </html>
