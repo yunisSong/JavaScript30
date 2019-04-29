@@ -31,6 +31,29 @@ const keys = Array.from(document.querySelectorAll('.key'));
 keys.forEach(key => key.addEventListener('transitionend',removeTransition));
 ```
 ### 02 - JS and CSS Clock
+#### 1. 获取当前时间
+
+```
+const date = new Date();
+```
+
+#### 2. 定时器调用
+`setDate` 是定时调用的方法，`1000` 是调用的时间间隔（毫秒）
+
+```
+setInterval(setDate, 1000);
+```
+#### 3. 视图动画变换
+
+```
+hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+```
+
+#### 4. 设置视图动画变化的锚点
+
+```
+transform-origin: 100%;
+```
 ### 03 - CSS Variables
 ### 04 - Array Cardio Day 1
 ### 05 - Flex Panel Gallery
