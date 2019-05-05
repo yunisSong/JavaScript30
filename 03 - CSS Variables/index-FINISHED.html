@@ -21,11 +21,19 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <style>
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
-
+    :root {
+      --base: #fff;
+      --blur: 10px;
+      --spacing: 10px;
+    }
+    .hl {
+      color: var(--base);
+    }
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
     body {
       text-align: center;
       background: #193549;
@@ -45,6 +53,70 @@
   </style>
 
   <script>
+
+/*
+
+  const list= document.querySelectorAll('.controls input');
+
+    const color = list[2];
+    const padding = list[0];
+    const blur = list[1];
+    const img = document.querySelector('img');
+    const h1 = document.querySelector('.hl');
+    console.log(`${h1} hhhhhhh`)
+
+    function uploadUI(argument) {
+      // body...
+      img.style.setProperty('--base',color.value);
+      img.style.setProperty('--spacing',`${padding.value}px`);
+      img.style.setProperty('--blur',`${blur.value}px`);
+      h1.style.setProperty('--base',color.value);
+    }
+
+    color.addEventListener('input',function(e) {
+
+        console.log(color.value);
+        img.style.setProperty('--base',color.value);
+        h1.style.setProperty('--base',color.value);
+
+    });
+
+    padding.addEventListener('input',function(e) {
+        console.log(padding.value);
+        img.style.setProperty('--spacing',`${padding.value}px`);
+    });
+
+    blur.addEventListener('input',function(e) {
+        console.log("${blur.value}px");
+        img.style.setProperty('--blur',`${blur.value}px`);
+    });
+    uploadUI();
+
+
+ */
+
+//获取 input 标签
+ const inputs = document.querySelectorAll('.controls input');
+
+//当监听的标签值发生变化时，会调用这个方法。刷新 css 变量的值
+ function handleUI() {
+  console.log(this);
+  /*
+   获取单位值
+   形如  data-px,data-size 之类的属性，都存储在  this.dataset 中，可以通过 this.dataset.px 获取属性值
+  */
+  const suffix = this.dataset.sizing || '';
+  /*
+    修改当前 css 变量值
+    document.documentElement 是整个文档节点树的根节点，在网页中即html标签；
+    style.setProperty 修改现有的属性值或者新增属性。
+   */
+  document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
+ }
+
+//循环监听input 元素的 input 事件（当 input 标签值发生改变时，会通知 input 事件）
+ inputs.forEach(input => input.addEventListener('input', handleUI));
+
   </script>
 
 </body>

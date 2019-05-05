@@ -55,6 +55,45 @@ hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 transform-origin: 100%;
 ```
 ### 03 - CSS Variables
+#### 1. 声明 css 变量
+
+```
+:root {
+  --base: #fff;
+  --blur: 10px;
+  --padding: 10px;
+}
+```
+
+> `:root` 表示全局变量，所有的选择器都可以读取他们。
+>  变量以 `--` 开头，与其他正式的 css 属性没有什么不同，只是没有默认值。
+#### 2. 使用 css 变量
+
+```
+img {
+      padding: var(--padding);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+```
+
+`var(--padding)` 读取变量 `--padding` 的值。
+
+#### 3. 元素的值集合
+
+```
+<input id="spacing"  data-sizing="px">
+```
+
+形如  `data-px`,`data-size` 之类的属性，都存储在  `this.dataset `中，可以通过 `this.dataset.px` 获取属性值
+
+#### 4. 选择器的多个选择条件
+
+```
+const inputs = document.querySelectorAll('.controls input');
+```
+选择 `class` 为 `controls` 下的 `input` 元素。
+
 ### 04 - Array Cardio Day 1
 ### 05 - Flex Panel Gallery
 ### 06 - Type Ahead
