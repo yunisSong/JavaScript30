@@ -95,6 +95,81 @@ const inputs = document.querySelectorAll('.controls input');
 选择 `class` 为 `controls` 下的 `input` 元素。
 
 ### 04 - Array Cardio Day 1
+#### 数组 filter
+
+```
+const t = inventors.filter(function (e) {
+  if (e.year >= 1500 && e.year < 1600) {
+    return true;
+  }else {
+    return false;
+  }
+});
+
+const t = inventors.filter(function (e) {
+  if (e.year >= 1500 && e.year < 1600) {
+    return true;
+  }
+});
+
+const t = inventors.filter(e => {
+  if (e.year >= 1500 && e.year < 1600) {
+    return true;
+  }
+});
+
+const t1 = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
+        
+```
+
+#### 数组 sort
+
+```
+const sortLastName = people.sort(function (a,b) {
+  const [afrist,alast] =a.split(", ");
+  const [bfrist,blast] = b.split(", ");
+  if (afrist> bfrist) {
+    return -1;
+  }else {
+    return 1;
+  }
+});
+
+const oldList = inventors.sort((a,b) => ((a.passed - a.year) > (b.passed - b.year) ? 1 : -1));
+
+const sortLastName = people.sort(function (a,b) {
+  const [afrist,alast] =a.split(", ");
+  const [bfrist,blast] = b.split(", ");
+  if (afrist> bfrist) {
+    return -1;
+  }else {
+    return 1;
+  }
+});
+```
+#### 数组 map
+
+```
+const fullName = inventors.map(e => (e.first + " " + e.last));
+const fullName1 = inventors.map(e => `${e.first} ${e.last}`);
+```
+#### 数组 Reduce
+
+
+```
+const totalLive = inventors.reduce((a,e) => {
+      return (a + (e.passed - e.year));
+    }, 0);
+const totalLive1 = inventors.reduce((a,e) => (a + (e.passed - e.year)), 0);
+
+const sumInstances = data.reduce(function (object,ins){
+  if (!object[ins]) {
+    object[ins] = 0;
+  }
+  object[ins]++;
+  return object;
+}
+```
 ### 05 - Flex Panel Gallery
 ### 06 - Type Ahead
 ### 07 - Array Cardio Day 2
