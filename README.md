@@ -171,6 +171,47 @@ const sumInstances = data.reduce(function (object,ins){
 }
 ```
 ### 05 - Flex Panel Gallery
+#### 子元素高度与父元素一致
+
+vh:相对于视窗的高度，那么vw:则是相对于视窗的高度
+```
+ min-height: 100vh;
+ //宽度与父元素一致
+ width:100%;
+```
+#### 图片拉伸方式
+
+```
+background-size: cover;
+```
+#### flex-direction
+
+flex-direction属性决定主轴的方向（即项目的排列方向）。
+* row（默认值）：主轴为水平方向，起点在左端。
+* row-reverse：主轴为水平方向，起点在右端。
+* column：主轴为垂直方向，起点在上沿。
+* column-reverse：主轴为垂直方向，起点在下沿。
+
+####  flex
+`flex` 属性是 `flex-grow`, `flex-shrink` 和 `flex-basis` 的简写，默认值为0 1 auto。后两个属性可选。
+##### flex-grow
+flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+##### flex-shrink
+flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+##### flex-basis
+flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+
+#### justify-content
+justify-content属性定义了项目在主轴上的对齐方式。
+
+* flex-start（默认值）：左对齐
+* flex-end：右对齐
+* center： 居中
+* space-between：两端对齐，项目之间的间隔都相等。
+* space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+
 ### 06 - Type Ahead
 ### 07 - Array Cardio Day 2
 ### 08 - Fun with HTML5 Canvas
