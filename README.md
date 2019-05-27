@@ -171,9 +171,14 @@ const sumInstances = data.reduce(function (object,ins){
 }
 ```
 ### 05 - Flex Panel Gallery
+介绍 `Flex` 写的好的文章。
+[Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+[Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+[iOS 上的 FlexBox 布局](https://juejin.im/post/5a33a6926fb9a045104a8d3c?utm_source=weibo&utm_campaign=user#heading-4)
 #### 子元素高度与父元素一致
 
 vh:相对于视窗的高度，那么vw:则是相对于视窗的高度
+
 ```
  min-height: 100vh;
  //宽度与父元素一致
@@ -187,6 +192,7 @@ background-size: cover;
 #### flex-direction
 
 flex-direction属性决定主轴的方向（即项目的排列方向）。
+
 * row（默认值）：主轴为水平方向，起点在左端。
 * row-reverse：主轴为水平方向，起点在右端。
 * column：主轴为垂直方向，起点在上沿。
@@ -213,6 +219,18 @@ justify-content属性定义了项目在主轴上的对齐方式。
 * space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
 
 ### 06 - Type Ahead
+
+fetch（address，callback）；
+
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => cities.push(...data));
+
+    const regex = new RegExp(wordToMatch, 'gi');
+
+
+    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+    
 ### 07 - Array Cardio Day 2
 ### 08 - Fun with HTML5 Canvas
 ### 09 - Dev Tools Domination

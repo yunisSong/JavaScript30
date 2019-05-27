@@ -43,11 +43,8 @@ function displayCityList () {
     <span class="population">${plase.population}</span>
     </li>`
   }).join('');
-
-
   console.log(heml);
   suggestions.innerHTML = heml;
-
 }
 
 inputSearch.addEventListener('change', displayCityList);
