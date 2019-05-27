@@ -170,11 +170,13 @@ const sumInstances = data.reduce(function (object,ins){
   return object;
 }
 ```
+
 ### 05 - Flex Panel Gallery
 介绍 `Flex` 写的好的文章。
-[Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-[Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
-[iOS 上的 FlexBox 布局](https://juejin.im/post/5a33a6926fb9a045104a8d3c?utm_source=weibo&utm_campaign=user#heading-4)
+* [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+* [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+* [iOS 上的 FlexBox 布局](https://juejin.im/post/5a33a6926fb9a045104a8d3c?utm_source=weibo&utm_campaign=user#heading-4)
+
 #### 子元素高度与父元素一致
 
 vh:相对于视窗的高度，那么vw:则是相对于视窗的高度
@@ -220,16 +222,30 @@ justify-content属性定义了项目在主轴上的对齐方式。
 
 ### 06 - Type Ahead
 
+#### 异步请求网络数据
+
+```
 fetch（address，callback）；
 
+```
+
+#### json => model
+
+```
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data));
+```
 
+#### 正则表达式替换字符串
+
+```
     const regex = new RegExp(wordToMatch, 'gi');
-
-
     const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+
+```
+
+    
     
 ### 07 - Array Cardio Day 2
 ### 08 - Fun with HTML5 Canvas
