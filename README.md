@@ -248,6 +248,45 @@ fetch(endpoint)
     
     
 ### 07 - Array Cardio Day 2
+
+### some
+只要数组中有一个条件服务，即为真
+
+```
+const some = people.some(person => (new Date().getFullYear() - person.year) >= 19);
+```
+
+### every
+数组中所有的元素都符合条件，才为真
+
+```
+const every = people.every(person => (new Date().getFullYear() - person.year) >= 19);
+```
+### find
+查找服务条件的元素
+
+```
+const comment = comments.find(comment => comment.id === 823423);
+```
+
+### findIndex
+查找符合条件的元素的 index
+
+```
+const index = comments.findIndex(comment => comment.id === 823423);
+```
+
+### 根据index删除特定的元素
+
+```
+    const index = comments.findIndex(comment => comment.id === 823423);
+    console.log(index);
+
+    // delete the comment with the ID of 823423
+    const last = comments.splice(index, 1);
+```
+`last` 返回删除的元素，`comments` 变为移除  `index` 后 `1` 位元素的数组。
+
 ### 08 - Fun with HTML5 Canvas
 ### 09 - Dev Tools Domination
 ### 10 - Hold Shift and Check Checkboxes
