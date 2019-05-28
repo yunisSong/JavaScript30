@@ -5,7 +5,6 @@
 
 Javascript30是在Github上看到的一个旨在使用纯Js来进行练习，原项目地址是[wesbos-JavaScript30](https://github.com/wesbos/JavaScript30)，感谢  wesbos 提供的非常优秀的教程。这里主要记录学习的过程中学到的东西。
 
-   :toc:
    
 ### 01 - JavaScript Drum Kit
 #### 1. 根据 元素名称、元素属性值 查找元素
