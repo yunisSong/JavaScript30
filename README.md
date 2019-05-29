@@ -294,6 +294,12 @@ const index = comments.findIndex(comment => comment.id === 823423);
 `last` 返回删除的元素，`comments` 变为移除  `index` 后 `1` 位元素的数组。
 
 ### 08 - Fun with HTML5 Canvas
+#### 鼠标事件
+
+* `mousemove` 鼠标移动
+* `mousedown` 鼠标按下
+* `mouseup` 鼠标松开
+* `mouseout` 鼠标移除屏幕
 
 ### 09 - Dev Tools Domination
 ### 10 - Hold Shift and Check Checkboxes
