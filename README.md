@@ -360,6 +360,7 @@ console.time('fetching data')
 console.timeEnd('fetching data')
 ```
 ### 10 - Hold Shift and Check Checkboxes
+[JavaScript 的 this 原理](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
 ### 11 - Custom Video Player
 ### 12 - Key Sequence Detection
 ### 13 - Slide in on Scroll
