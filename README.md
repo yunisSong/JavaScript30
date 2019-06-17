@@ -302,6 +302,63 @@ const index = comments.findIndex(comment => comment.id === 823423);
 * `mouseout` 鼠标移除屏幕
 
 ### 09 - Dev Tools Domination
+#### 如何打断点
+选中要断点的元素， 右键 -> break on -> XXX
+#### 打印参数
+
+```
+    console.log('hello %s ','ssss')
+```
+#### 为打印增加样式
+    
+```
+console.log('%c hello ','font-size:50px;background:red')
+```
+#### 打印警告、错误
+
+```
+console.warn('hello')
+console.error('hello')
+```
+#### 断言
+
+```
+console.assert(1===1,'Yunis test 1');
+onsole.assert(1===2,'Yunis test 2');
+```
+#### 清屏
+这个一般用不到，可以使用快捷键 `command` + `k`.
+```
+console.clear();
+```
+
+#### 组合输出
+
+```
+  //开放
+  console.group(`${dog.name}`);
+  //关闭
+  console.groupCollapsed(`${dog.name}`);
+
+  console.log(`This is ${dog.name}`)
+  console.log(`${dog.name} is ${dog.age} years old`)
+  console.log(`${dog.name} is ${dog.age * 7} dog years old`)
+
+  console.groupEnd(`${dog.name}`);
+```
+
+#### 计数
+
+```
+console.count('wes');
+```
+
+#### 计算时间
+
+```
+console.time('fetching data')
+console.timeEnd('fetching data')
+```
 ### 10 - Hold Shift and Check Checkboxes
 ### 11 - Custom Video Player
 ### 12 - Key Sequence Detection

@@ -15,31 +15,82 @@
       const p = document.querySelector('p');
       p.style.color = '#BADA55';
       p.style.fontSize = '50px';
+
+      /*
+        打断点
+        选中要断点的元素， 右键 -> break on -> XXX
+
+       */
     }
 
     // Regular
+    console.log('hello')
 
     // Interpolated
+    console.log('hello %s ','ssss')
 
     // Styled
+    console.log('%c hello ','font-size:50px;background:red')
 
     // warning!
 
+    console.warn('hello')
+
+
     // Error :|
-
+  console.error('hello')
     // Info
-
+  console.info('Crocodiles eat 3-4 people per year')
     // Testing
+  console.assert(1===1,'Yunis test 1');
+  onsole.assert(1===2,'Yunis test 2');c
 
     // clearing
-
+  console.clear();
     // Viewing DOM Elements
+
+const p = document.querySelector('p');
+
+console.log(p);
+console.dir(p);
+
 
     // Grouping together
 
+dogs.forEach( dog => {
+  // console.group(`${dog.name}`);
+  console.groupCollapsed(`${dog.name}`);
+
+  console.log(`This is ${dog.name}`)
+  console.log(`${dog.name} is ${dog.age} years old`)
+  console.log(`${dog.name} is ${dog.age * 7} dog years old`)
+
+  console.groupEnd(`${dog.name}`);
+});
+
     // counting
 
+console.count('wes');
+console.count('wes');
+console.count('stev');
+console.count('wes');
+console.count('wes');
+console.count('stev');
+console.count('wes');
+
+
     // timing
+
+console.time('fetching data')
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+let cities = [];
+fetch(endpoint)
+.then(blob => blob.json())
+.then(data => cities.push(...data) );
+console.timeEnd('fetching data')
+console.log(cities)
+
+console.table(dogs);
 
   </script>
 </body>
