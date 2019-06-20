@@ -369,6 +369,52 @@ const methondName = video.paused ? 'play' :'pause';
 video[methondName]();
 ```
 ### 12 - Key Sequence Detection
+
+[splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+```
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+var removed = myFish.splice(2, 0, 'drum');
+
+// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"] 
+// removed is [], no elements removed
+
+
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+var removed = myFish.splice(2, 0, 'drum', 'guitar');
+
+// myFish is ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"] 
+// removed is [], no elements removed
+
+
+var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+var removed = myFish.splice(3, 1);
+
+// removed is ["mandarin"]
+// myFish is ["angel", "clown", "drum", "sturgeon"]
+
+
+var myFish = ['angel', 'clown', 'drum', 'sturgeon'];
+var removed = myFish.splice(2, 1, 'trumpet');
+
+// myFish is ["angel", "clown", "trumpet", "sturgeon"]
+// removed is ["drum"]
+
+
+
+var myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
+var removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
+
+// myFish is ["parrot", "anemone", "blue", "trumpet", "sturgeon"] 
+// removed is ["angel", "clown"]
+
+
+var myFish = ['parrot', 'anemone', 'blue', 'trumpet', 'sturgeon'];
+var removed = myFish.splice(myFish.length - 3, 2);
+
+// myFish is ["parrot", "anemone", "sturgeon"] 
+// removed is ["blue", "trumpet"]
+```
 ### 13 - Slide in on Scroll
 ### 14 - JavaScript References VS Copying
 ### 15 - LocalStorage
