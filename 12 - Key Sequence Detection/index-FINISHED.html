@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+    const pressed = [];
+    const secretCode = 'aaaaaa';
+    window.addEventListener('keyup', e => {
+        pressed.push(e.key)
+        console.log(pressed)
+        //截取后 -secretCode.length - 1 开始后的  pressed.length - secretCode.length 位数
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+        console.log(pressed)
+        //join 拼接成字符串
+        if (pressed.join('').includes(secretCode)) {
+            cornify_add();
+        }
+    })
+
 </script>
 </body>
 </html>
